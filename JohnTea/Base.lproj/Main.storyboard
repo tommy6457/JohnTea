@@ -1,24 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PIb-WS-aef">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--想喝點什麼?-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="JohnTea" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="jUF-ve-KmN">
+                                <rect key="frame" x="0.0" y="44" width="375" height="106"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ocK-tp-Z92">
+                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8ad-5H-709">
+                                <rect key="frame" x="0.0" y="150" width="375" height="122"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-Zg-EGd">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="MENU">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                            <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickedMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xY6-8A-GoN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.69999999999999996" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6c-Oi-AxR">
+                                        <rect key="frame" x="0.0" y="30.5" width="375" height="30.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="紅茶經典">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                            <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r2B-Ol-8pE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.69999999999999996" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ka4-cu-t3L">
+                                        <rect key="frame" x="0.0" y="61" width="375" height="30.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="紅茶那提">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                            <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CJa-l6-jsp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.69999999999999996" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnc-AU-qrn">
+                                        <rect key="frame" x="0.0" y="91.5" width="375" height="30.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="紅茶調飲">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                            <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s9P-TD-EBM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.094117647058823528" green="0.19607843137254902" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ocK-tp-Z92" firstAttribute="top" secondItem="jUF-ve-KmN" secondAttribute="bottom" id="1MO-hU-wSa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ad-5H-709" secondAttribute="trailing" id="GZm-d2-6bd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jUF-ve-KmN" secondAttribute="bottom" constant="517" id="GkY-xv-Fm3"/>
+                            <constraint firstItem="jUF-ve-KmN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K9O-le-Q7w"/>
+                            <constraint firstItem="8ad-5H-709" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MKK-xQ-lnk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ocK-tp-Z92" secondAttribute="trailing" id="Tcn-tT-9Zy"/>
+                            <constraint firstItem="ocK-tp-Z92" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eH7-aJ-yWd"/>
+                            <constraint firstItem="jUF-ve-KmN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hsF-MH-og6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ocK-tp-Z92" secondAttribute="bottom" id="nl9-7m-Q0H"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jUF-ve-KmN" secondAttribute="trailing" id="s0Z-z8-QMQ"/>
+                            <constraint firstItem="8ad-5H-709" firstAttribute="top" secondItem="jUF-ve-KmN" secondAttribute="bottom" id="zd7-gJ-YgV"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="想喝點什麼?" id="siW-lS-Qfi"/>
+                    <connections>
+                        <outlet property="typeStackView" destination="8ad-5H-709" id="O0Y-iV-ilY"/>
+                        <outletCollection property="typeButtons" destination="tdJ-Zg-EGd" collectionClass="NSMutableArray" id="tsb-MO-3be"/>
+                        <outletCollection property="typeButtons" destination="x6c-Oi-AxR" collectionClass="NSMutableArray" id="B7q-Pj-cjk"/>
+                        <outletCollection property="typeButtons" destination="ka4-cu-t3L" collectionClass="NSMutableArray" id="k1Y-Zr-EtX"/>
+                        <outletCollection property="typeButtons" destination="wnc-AU-qrn" collectionClass="NSMutableArray" id="v2Q-9O-asa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="959.20000000000005" y="93.103448275862078"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Kgo-3t-ExQ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T5U-Gx-82L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PIb-WS-aef" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vwa-Xf-sEI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.84888890409999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.84888890409999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="n8T-3g-1WI"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="10" y="-8"/>
+        </scene>
+        <!--想喝點什麼?-->
+        <scene sceneID="qsY-D2-Udj">
+            <objects>
+                <viewController id="9F2-Ak-axd" customClass="DetailVC" customModule="JohnTea" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xKT-iF-rmC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="voD-sN-G9x">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="J66-NB-CEz">
+                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="第二頁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPr-f3-Z2X">
+                                <rect key="frame" x="161" y="175" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="03t-XU-85f"/>
+                        <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="03t-XU-85f" firstAttribute="trailing" secondItem="voD-sN-G9x" secondAttribute="trailing" id="1kp-zV-MDe"/>
+                            <constraint firstItem="03t-XU-85f" firstAttribute="bottom" secondItem="voD-sN-G9x" secondAttribute="bottom" constant="517" id="DlY-Aq-dmu"/>
+                            <constraint firstItem="03t-XU-85f" firstAttribute="trailing" secondItem="J66-NB-CEz" secondAttribute="trailing" id="E0Z-In-BLx"/>
+                            <constraint firstItem="03t-XU-85f" firstAttribute="bottom" secondItem="J66-NB-CEz" secondAttribute="bottom" id="GTN-Lu-Epo"/>
+                            <constraint firstItem="voD-sN-G9x" firstAttribute="top" secondItem="03t-XU-85f" secondAttribute="top" id="SP6-Ws-Wgc"/>
+                            <constraint firstItem="J66-NB-CEz" firstAttribute="top" secondItem="voD-sN-G9x" secondAttribute="bottom" id="dx9-fd-pJ7"/>
+                            <constraint firstItem="J66-NB-CEz" firstAttribute="leading" secondItem="03t-XU-85f" secondAttribute="leading" id="mvr-pp-gVS"/>
+                            <constraint firstItem="voD-sN-G9x" firstAttribute="leading" secondItem="03t-XU-85f" secondAttribute="leading" id="s6m-JV-1tY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="想喝點什麼?" id="mhL-3Q-mEN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="udC-Bh-TCh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1694" y="93"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="banner" width="1773" height="656"/>
+        <image name="logo" width="320" height="320"/>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
