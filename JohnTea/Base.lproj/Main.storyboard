@@ -4,9 +4,15 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Songti.ttc">
+            <string>STSongti-TC-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--想喝點什麼?-->
         <scene sceneID="tne-QT-ifu">
@@ -22,120 +28,354 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ocK-tp-Z92">
                                 <rect key="frame" x="0.0" y="150" width="375" height="517"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8ad-5H-709">
-                                <rect key="frame" x="0.0" y="150" width="375" height="122"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnN-J6-cKi">
+                                <rect key="frame" x="0.0" y="150" width="375" height="517"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-Zg-EGd">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="MENU">
-                                            <backgroundConfiguration key="background">
-                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
-                                            <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="clickedMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xY6-8A-GoN"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" alpha="0.69999999999999996" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6c-Oi-AxR">
-                                        <rect key="frame" x="0.0" y="30.5" width="375" height="30.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="紅茶經典">
-                                            <backgroundConfiguration key="background">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8ad-5H-709">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdJ-Zg-EGd">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
                                                 <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
-                                            <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r2B-Ol-8pE"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" alpha="0.69999999999999996" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ka4-cu-t3L">
-                                        <rect key="frame" x="0.0" y="61" width="375" height="30.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="紅茶那提">
-                                            <backgroundConfiguration key="background">
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="MENU">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xY6-8A-GoN"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" tag="101" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6c-Oi-AxR">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" systemColor="tintColor"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="紅茶經典">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVz-Xf-2pK">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                                 <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
-                                            <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CJa-l6-jsp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" alpha="0.69999999999999996" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnc-AU-qrn">
-                                        <rect key="frame" x="0.0" y="91.5" width="375" height="30.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="紅茶調飲">
-                                            <backgroundConfiguration key="background">
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="曼非紅茶">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z5S-j7-YCW"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaM-dp-29F">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                                 <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            </backgroundConfiguration>
-                                            <fontDescription key="titleFontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
-                                            <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s9P-TD-EBM"/>
-                                        </connections>
-                                    </button>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="康提紅茶">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z7p-U9-KZL"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU5-mR-34Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="雨果紅茶">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mwb-lT-ADp"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayb-Ac-1Sp">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="茶中香檳">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lkW-dx-7xe"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yc-ZY-wJg">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="錫金紅茶">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FNW-eN-Oam"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAA-Ue-xGs">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="灼香紅茶">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y9S-Ht-lnr"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" tag="102" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ka4-cu-t3L">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" systemColor="tintColor"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="紅茶那提">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFh-LM-27c">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="珍珠那堤">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VBq-Mw-sst"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvc-1e-nos">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="雨果那提">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A1D-Ng-V33"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSD-a8-8KM">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="曼非那堤">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8jK-bM-71S"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lj-9h-rJc">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="抹茶那堤">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LbC-n0-OXa"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfm-5g-Cjh">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="煮濃那堤">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gFh-Ga-BWM"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" tag="103" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnc-AU-qrn">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" systemColor="tintColor"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="紅茶調飲">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6E8-AH-agg">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="生乳灼香紅">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qTa-gc-iTQ"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IT6-Pb-YwE">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="生乳紅茶">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qOk-Xf-AbU"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaS-6A-Flt">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="糖檸紅茶">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nOP-tt-Vfu"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J8Y-bz-Cjt">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="玉釀紅茶">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="udh-Zr-LyP"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.59999999999999998" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTu-N5-8pr">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="冰淇淋紅茶">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Si9-Lb-gJ7"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" tag="104" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdE-Ls-y36">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" systemColor="tintColor"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="其他">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" alpha="0.60000002384185791" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOv-3L-Uzf">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="給我一杯忘情水(隨機)">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clickedType:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJv-x7-HjD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="8ad-5H-709" firstAttribute="top" secondItem="fnN-J6-cKi" secondAttribute="top" id="3zB-7K-kzZ"/>
+                                    <constraint firstItem="8ad-5H-709" firstAttribute="leading" secondItem="fnN-J6-cKi" secondAttribute="leading" id="H2o-Px-y5g"/>
+                                    <constraint firstItem="8ad-5H-709" firstAttribute="trailing" secondItem="63q-c4-8ep" secondAttribute="trailing" id="OWQ-JP-fQ3"/>
+                                    <constraint firstItem="8ad-5H-709" firstAttribute="top" secondItem="63q-c4-8ep" secondAttribute="top" id="P6y-Z6-KQb"/>
+                                    <constraint firstItem="8ad-5H-709" firstAttribute="leading" secondItem="63q-c4-8ep" secondAttribute="leading" id="YoM-03-ASc"/>
+                                    <constraint firstItem="4Oh-EO-J5d" firstAttribute="trailing" secondItem="8ad-5H-709" secondAttribute="trailing" id="rO4-NA-KGV"/>
+                                    <constraint firstItem="8ad-5H-709" firstAttribute="bottom" secondItem="63q-c4-8ep" secondAttribute="bottom" id="yb8-bQ-T6r"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="63q-c4-8ep"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="4Oh-EO-J5d"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.19607843137254902" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ocK-tp-Z92" firstAttribute="top" secondItem="jUF-ve-KmN" secondAttribute="bottom" id="1MO-hU-wSa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ad-5H-709" secondAttribute="trailing" id="GZm-d2-6bd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jUF-ve-KmN" secondAttribute="bottom" constant="517" id="GkY-xv-Fm3"/>
                             <constraint firstItem="jUF-ve-KmN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K9O-le-Q7w"/>
-                            <constraint firstItem="8ad-5H-709" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MKK-xQ-lnk"/>
+                            <constraint firstItem="fnN-J6-cKi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RWX-Kp-2aG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ocK-tp-Z92" secondAttribute="trailing" id="Tcn-tT-9Zy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fnN-J6-cKi" secondAttribute="trailing" id="UKS-E9-2Qf"/>
+                            <constraint firstItem="fnN-J6-cKi" firstAttribute="top" secondItem="jUF-ve-KmN" secondAttribute="bottom" id="UV3-0S-KI7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fnN-J6-cKi" secondAttribute="bottom" id="Ux4-AJ-s7D"/>
                             <constraint firstItem="ocK-tp-Z92" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eH7-aJ-yWd"/>
                             <constraint firstItem="jUF-ve-KmN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hsF-MH-og6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ocK-tp-Z92" secondAttribute="bottom" id="nl9-7m-Q0H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jUF-ve-KmN" secondAttribute="trailing" id="s0Z-z8-QMQ"/>
-                            <constraint firstItem="8ad-5H-709" firstAttribute="top" secondItem="jUF-ve-KmN" secondAttribute="bottom" id="zd7-gJ-YgV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="想喝點什麼?" id="siW-lS-Qfi"/>
                     <connections>
                         <outlet property="typeStackView" destination="8ad-5H-709" id="O0Y-iV-ilY"/>
-                        <outletCollection property="typeButtons" destination="tdJ-Zg-EGd" collectionClass="NSMutableArray" id="tsb-MO-3be"/>
-                        <outletCollection property="typeButtons" destination="x6c-Oi-AxR" collectionClass="NSMutableArray" id="B7q-Pj-cjk"/>
-                        <outletCollection property="typeButtons" destination="ka4-cu-t3L" collectionClass="NSMutableArray" id="k1Y-Zr-EtX"/>
-                        <outletCollection property="typeButtons" destination="wnc-AU-qrn" collectionClass="NSMutableArray" id="v2Q-9O-asa"/>
+                        <outletCollection property="typeButtons" destination="tdJ-Zg-EGd" collectionClass="NSMutableArray" id="6Lz-Yi-hRG"/>
+                        <outletCollection property="typeButtons" destination="x6c-Oi-AxR" collectionClass="NSMutableArray" id="vFy-Bs-VKo"/>
+                        <outletCollection property="typeButtons" destination="UVz-Xf-2pK" collectionClass="NSMutableArray" id="dcQ-Sq-J5f"/>
+                        <outletCollection property="typeButtons" destination="SaM-dp-29F" collectionClass="NSMutableArray" id="3Lc-t3-jdF"/>
+                        <outletCollection property="typeButtons" destination="QU5-mR-34Q" collectionClass="NSMutableArray" id="DYm-Bo-UIL"/>
+                        <outletCollection property="typeButtons" destination="ayb-Ac-1Sp" collectionClass="NSMutableArray" id="BLA-a1-led"/>
+                        <outletCollection property="typeButtons" destination="7Yc-ZY-wJg" collectionClass="NSMutableArray" id="Vsu-16-6Yo"/>
+                        <outletCollection property="typeButtons" destination="qAA-Ue-xGs" collectionClass="NSMutableArray" id="oVi-2c-tAo"/>
+                        <outletCollection property="typeButtons" destination="ka4-cu-t3L" collectionClass="NSMutableArray" id="dEj-1j-oUi"/>
+                        <outletCollection property="typeButtons" destination="lFh-LM-27c" collectionClass="NSMutableArray" id="YWA-7O-V9o"/>
+                        <outletCollection property="typeButtons" destination="Pvc-1e-nos" collectionClass="NSMutableArray" id="ylc-fp-jo0"/>
+                        <outletCollection property="typeButtons" destination="wSD-a8-8KM" collectionClass="NSMutableArray" id="5aM-kc-3aS"/>
+                        <outletCollection property="typeButtons" destination="1Lj-9h-rJc" collectionClass="NSMutableArray" id="11i-PM-WGA"/>
+                        <outletCollection property="typeButtons" destination="Vfm-5g-Cjh" collectionClass="NSMutableArray" id="6T1-tT-IPN"/>
+                        <outletCollection property="typeButtons" destination="wnc-AU-qrn" collectionClass="NSMutableArray" id="Hop-n9-zEV"/>
+                        <outletCollection property="typeButtons" destination="6E8-AH-agg" collectionClass="NSMutableArray" id="xPO-N6-XtA"/>
+                        <outletCollection property="typeButtons" destination="IT6-Pb-YwE" collectionClass="NSMutableArray" id="WCf-FM-sld"/>
+                        <outletCollection property="typeButtons" destination="qaS-6A-Flt" collectionClass="NSMutableArray" id="VMt-SX-L4g"/>
+                        <outletCollection property="typeButtons" destination="J8Y-bz-Cjt" collectionClass="NSMutableArray" id="4pp-kK-PrI"/>
+                        <outletCollection property="typeButtons" destination="UTu-N5-8pr" collectionClass="NSMutableArray" id="IOz-od-QOu"/>
+                        <outletCollection property="typeButtons" destination="JdE-Ls-y36" collectionClass="NSMutableArray" id="oEM-7U-UJR"/>
+                        <outletCollection property="typeButtons" destination="eOv-3L-Uzf" collectionClass="NSMutableArray" id="LLh-Aa-rH9"/>
+                        <segue destination="9F2-Ak-axd" kind="show" identifier="toDetailPage" destinationCreationSelector="toDetailPage:" id="0Ng-sJ-pXr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="959.20000000000005" y="93.103448275862078"/>
+            <point key="canvasLocation" x="745" y="-9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kgo-3t-ExQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T5U-Gx-82L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PIb-WS-aef" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vwa-Xf-sEI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.84705882352941175" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.84888890409999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="20"/>
                             <color key="textColor" red="0.84888890409999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="n8T-3g-1WI"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="V46-za-Wrs"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T5U-Gx-82L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="10" y="-8"/>
         </scene>
-        <!--想喝點什麼?-->
+        <!--DetailVC-->
         <scene sceneID="qsY-D2-Udj">
             <objects>
                 <viewController id="9F2-Ak-axd" customClass="DetailVC" customModule="JohnTea" customModuleProvider="target" sceneMemberID="viewController">
@@ -144,44 +384,273 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="voD-sN-G9x">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="106"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="J66-NB-CEz">
                                 <rect key="frame" x="0.0" y="150" width="375" height="517"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="第二頁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPr-f3-Z2X">
-                                <rect key="frame" x="161" y="175" width="52" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76m-OB-SOJ">
+                                <rect key="frame" x="30" y="180" width="315" height="457"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4I1-ID-7iP">
+                                        <rect key="frame" x="10" y="10" width="295" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="甜度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNC-oN-Eec">
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="31"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="18"/>
+                                                <color key="textColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="46S-rm-4Ge">
+                                                <rect key="frame" x="44" y="0.0" width="251" height="32"/>
+                                                <segments>
+                                                    <segment title="無糖"/>
+                                                    <segment title="三分"/>
+                                                    <segment title="五分"/>
+                                                    <segment title="七分"/>
+                                                    <segment title="全糖"/>
+                                                </segments>
+                                                <color key="selectedSegmentTintColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="sugarChanged:" destination="9F2-Ak-axd" eventType="valueChanged" id="dc6-m3-L2c"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="83l-6i-lxL">
+                                        <rect key="frame" x="10" y="51" width="295" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="冰塊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0O-zS-6fk">
+                                                <rect key="frame" x="0.0" y="0.0" width="36" height="31"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="18"/>
+                                                <color key="textColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7rw-I9-B0f">
+                                                <rect key="frame" x="44" y="0.0" width="251" height="32"/>
+                                                <segments>
+                                                    <segment title="去冰"/>
+                                                    <segment title="微冰"/>
+                                                    <segment title="少冰"/>
+                                                    <segment title="正常"/>
+                                                </segments>
+                                                <color key="selectedSegmentTintColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="iceChanged:" destination="9F2-Ak-axd" eventType="valueChanged" id="91r-G2-OLO"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5a4-bS-gK1">
+                                        <rect key="frame" x="10" y="133" width="295" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="數量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZs-Iz-hEC">
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="32"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="18"/>
+                                                <color key="textColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wj-Cy-j8u">
+                                                <rect key="frame" x="101" y="0.0" width="93" height="32"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="18"/>
+                                                <color key="textColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="tkA-HG-td5">
+                                                <rect key="frame" x="202" y="0.0" width="93" height="32"/>
+                                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="quantityChanged:" destination="9F2-Ak-axd" eventType="valueChanged" id="VQq-jf-bfB"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0Vj-AC-FVj">
+                                        <rect key="frame" x="10" y="175" width="295" height="25.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="nGq-5b-hN6">
+                                                <rect key="frame" x="0.0" y="0.0" width="142.5" height="25.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="小計" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8V-WX-K5X">
+                                                        <rect key="frame" x="0.0" y="0.0" width="36" height="25.5"/>
+                                                        <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="18"/>
+                                                        <color key="textColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNd-oj-Bdg">
+                                                        <rect key="frame" x="86" y="0.0" width="56.5" height="25.5"/>
+                                                        <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="18"/>
+                                                        <color key="textColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ghr-JI-fe3">
+                                                <rect key="frame" x="152.5" y="0.0" width="142.5" height="25.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="總計" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOl-AL-0lW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="36" height="25.5"/>
+                                                        <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="18"/>
+                                                        <color key="textColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdK-7K-xfq">
+                                                        <rect key="frame" x="86" y="0.0" width="56.5" height="25.5"/>
+                                                        <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="18"/>
+                                                        <color key="textColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DbV-cO-81H">
+                                        <rect key="frame" x="10" y="210.5" width="295" height="35"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="白珍珠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjc-aw-0bk">
+                                                <rect key="frame" x="0.0" y="0.0" width="68" height="35"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="18"/>
+                                                <color key="textColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bm6-5z-vwT">
+                                                <rect key="frame" x="76" y="0.0" width="69.5" height="35"/>
+                                                <color key="onTintColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="bubbleChanged:" destination="9F2-Ak-axd" eventType="valueChanged" id="wCn-zQ-u6h"/>
+                                                </connections>
+                                            </switch>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFI-px-5Kh">
+                                                <rect key="frame" x="151.5" y="0.0" width="68" height="35"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="新增">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="15"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="addClicked:" destination="9F2-Ak-axd" eventType="touchUpInside" id="pHI-91-Me4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTj-g8-3E4">
+                                                <rect key="frame" x="227.5" y="0.0" width="67.5" height="35"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="清除">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="15"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="clearClicked:" destination="9F2-Ak-axd" eventType="touchUpInside" id="1d8-fA-u9t"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f5T-rf-vsR">
+                                        <rect key="frame" x="10" y="255.5" width="295" height="191.5"/>
+                                        <color key="backgroundColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="0.49415598484064571" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kkA-Z3-MbC">
+                                        <rect key="frame" x="10" y="92" width="295" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HD-VV-Pl7">
+                                                <rect key="frame" x="0.0" y="0.0" width="29" height="31"/>
+                                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="18"/>
+                                                <color key="textColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tjb-oJ-4qX">
+                                                <rect key="frame" x="37" y="0.0" width="258" height="32"/>
+                                                <segments>
+                                                    <segment title="M"/>
+                                                    <segment title="L"/>
+                                                </segments>
+                                                <color key="selectedSegmentTintColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="sizeChanged:" destination="9F2-Ak-axd" eventType="valueChanged" id="jxj-KM-m98"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.079006169805463572" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="f5T-rf-vsR" secondAttribute="bottom" constant="10" id="2PX-18-oiK"/>
+                                    <constraint firstItem="83l-6i-lxL" firstAttribute="top" secondItem="4I1-ID-7iP" secondAttribute="bottom" constant="10" id="7Qs-2R-bM6"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Vj-AC-FVj" secondAttribute="trailing" constant="10" id="9RY-QB-Ep3"/>
+                                    <constraint firstItem="kkA-Z3-MbC" firstAttribute="top" secondItem="83l-6i-lxL" secondAttribute="bottom" constant="10" id="Bem-fx-lja"/>
+                                    <constraint firstItem="0Vj-AC-FVj" firstAttribute="leading" secondItem="76m-OB-SOJ" secondAttribute="leading" constant="10" id="BgY-jK-8hG"/>
+                                    <constraint firstItem="kkA-Z3-MbC" firstAttribute="leading" secondItem="83l-6i-lxL" secondAttribute="leading" id="GUF-fg-mTx"/>
+                                    <constraint firstItem="83l-6i-lxL" firstAttribute="top" secondItem="4I1-ID-7iP" secondAttribute="bottom" constant="10" id="LOD-9Y-xkt"/>
+                                    <constraint firstItem="f5T-rf-vsR" firstAttribute="top" secondItem="DbV-cO-81H" secondAttribute="bottom" constant="10" id="PYT-9n-Hie"/>
+                                    <constraint firstItem="5a4-bS-gK1" firstAttribute="top" secondItem="kkA-Z3-MbC" secondAttribute="bottom" constant="10" id="Ptm-Gy-KHD"/>
+                                    <constraint firstItem="83l-6i-lxL" firstAttribute="trailing" secondItem="4I1-ID-7iP" secondAttribute="trailing" id="TA0-B1-m9z"/>
+                                    <constraint firstItem="5a4-bS-gK1" firstAttribute="trailing" secondItem="4I1-ID-7iP" secondAttribute="trailing" id="Tca-Jd-Npz"/>
+                                    <constraint firstAttribute="trailing" secondItem="f5T-rf-vsR" secondAttribute="trailing" constant="10" id="UB3-zs-B1G"/>
+                                    <constraint firstItem="f5T-rf-vsR" firstAttribute="leading" secondItem="76m-OB-SOJ" secondAttribute="leading" constant="10" id="Y4h-Vv-igS"/>
+                                    <constraint firstItem="0Vj-AC-FVj" firstAttribute="top" secondItem="5a4-bS-gK1" secondAttribute="bottom" constant="10" id="bqm-UR-8uw"/>
+                                    <constraint firstItem="4I1-ID-7iP" firstAttribute="top" secondItem="76m-OB-SOJ" secondAttribute="top" constant="10" id="bs1-Th-rp9"/>
+                                    <constraint firstItem="DbV-cO-81H" firstAttribute="top" secondItem="0Vj-AC-FVj" secondAttribute="bottom" constant="10" id="cOU-tL-7ZD"/>
+                                    <constraint firstItem="kkA-Z3-MbC" firstAttribute="trailing" secondItem="4I1-ID-7iP" secondAttribute="trailing" id="d37-u3-aRf"/>
+                                    <constraint firstItem="4I1-ID-7iP" firstAttribute="top" secondItem="76m-OB-SOJ" secondAttribute="top" constant="10" id="gxz-IN-4i1"/>
+                                    <constraint firstItem="DbV-cO-81H" firstAttribute="trailing" secondItem="4I1-ID-7iP" secondAttribute="trailing" id="ihQ-SP-Mkc"/>
+                                    <constraint firstItem="83l-6i-lxL" firstAttribute="leading" secondItem="4I1-ID-7iP" secondAttribute="leading" id="lX2-Dr-KcY"/>
+                                    <constraint firstItem="DbV-cO-81H" firstAttribute="leading" secondItem="4I1-ID-7iP" secondAttribute="leading" id="llv-JN-Vm3"/>
+                                    <constraint firstAttribute="trailing" secondItem="4I1-ID-7iP" secondAttribute="trailing" constant="10" id="oNi-gl-fOf"/>
+                                    <constraint firstItem="5a4-bS-gK1" firstAttribute="leading" secondItem="4I1-ID-7iP" secondAttribute="leading" id="wOq-eK-5Dx"/>
+                                    <constraint firstItem="4I1-ID-7iP" firstAttribute="leading" secondItem="76m-OB-SOJ" secondAttribute="leading" constant="10" id="zhF-sj-eWm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="03t-XU-85f"/>
                         <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="03t-XU-85f" firstAttribute="trailing" secondItem="voD-sN-G9x" secondAttribute="trailing" id="1kp-zV-MDe"/>
+                            <constraint firstItem="76m-OB-SOJ" firstAttribute="top" secondItem="voD-sN-G9x" secondAttribute="bottom" constant="30" id="9g8-oX-7zv"/>
                             <constraint firstItem="03t-XU-85f" firstAttribute="bottom" secondItem="voD-sN-G9x" secondAttribute="bottom" constant="517" id="DlY-Aq-dmu"/>
                             <constraint firstItem="03t-XU-85f" firstAttribute="trailing" secondItem="J66-NB-CEz" secondAttribute="trailing" id="E0Z-In-BLx"/>
                             <constraint firstItem="03t-XU-85f" firstAttribute="bottom" secondItem="J66-NB-CEz" secondAttribute="bottom" id="GTN-Lu-Epo"/>
                             <constraint firstItem="voD-sN-G9x" firstAttribute="top" secondItem="03t-XU-85f" secondAttribute="top" id="SP6-Ws-Wgc"/>
+                            <constraint firstItem="03t-XU-85f" firstAttribute="bottom" secondItem="76m-OB-SOJ" secondAttribute="bottom" constant="30" id="Y3C-wg-jeR"/>
                             <constraint firstItem="J66-NB-CEz" firstAttribute="top" secondItem="voD-sN-G9x" secondAttribute="bottom" id="dx9-fd-pJ7"/>
                             <constraint firstItem="J66-NB-CEz" firstAttribute="leading" secondItem="03t-XU-85f" secondAttribute="leading" id="mvr-pp-gVS"/>
                             <constraint firstItem="voD-sN-G9x" firstAttribute="leading" secondItem="03t-XU-85f" secondAttribute="leading" id="s6m-JV-1tY"/>
+                            <constraint firstItem="03t-XU-85f" firstAttribute="trailing" secondItem="76m-OB-SOJ" secondAttribute="trailing" constant="30" id="v8U-7t-wpH"/>
+                            <constraint firstItem="76m-OB-SOJ" firstAttribute="leading" secondItem="03t-XU-85f" secondAttribute="leading" constant="30" id="zKE-XQ-qdm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="想喝點什麼?" id="mhL-3Q-mEN"/>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="mhL-3Q-mEN"/>
+                    <connections>
+                        <outlet property="bubbleSwitch" destination="Bm6-5z-vwT" id="zVH-kT-dCU"/>
+                        <outlet property="iceSegmented" destination="7rw-I9-B0f" id="ZQK-f7-j65"/>
+                        <outlet property="quantityLabel" destination="3Wj-Cy-j8u" id="3H3-eL-Aja"/>
+                        <outlet property="resultTextView" destination="f5T-rf-vsR" id="lfl-yb-iiC"/>
+                        <outlet property="sizeSegmented" destination="Tjb-oJ-4qX" id="qhY-hu-U4c"/>
+                        <outlet property="subTotalLabel" destination="wNd-oj-Bdg" id="m9z-EC-n9X"/>
+                        <outlet property="sugarSegmented" destination="46S-rm-4Ge" id="dXx-Mb-pjA"/>
+                        <outlet property="totalLabel" destination="sdK-7K-xfq" id="UKU-qi-1gw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udC-Bh-TCh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1694" y="93"/>
+            <point key="canvasLocation" x="1476" y="-9.4452773613193415"/>
         </scene>
     </scenes>
     <resources>
         <image name="banner" width="1773" height="656"/>
         <image name="logo" width="320" height="320"/>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

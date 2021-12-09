@@ -14,6 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //修改BarButtonItem的字體
+        UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor(red: 216/255, green: 213/255, blue: 163/255, alpha: 1), .font: UIFont(name: "SongTi TC", size: 15)!], for: .normal)
+
         return true
     }
 
