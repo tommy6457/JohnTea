@@ -34,7 +34,6 @@ struct Drink {
         amount = self.price
         //珍珠+5塊錢
         if self.bubble {
-            print("加珍珠")
             amount += 5
         }
         

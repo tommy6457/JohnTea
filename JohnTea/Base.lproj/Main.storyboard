@@ -28,7 +28,56 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ocK-tp-Z92">
                                 <rect key="frame" x="0.0" y="150" width="375" height="517"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnN-J6-cKi">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jb-We-fze">
+                                <rect key="frame" x="0.0" y="150" width="375" height="32"/>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.1960784314" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="MENU">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="htu-Cm-aeU"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="vHR-cE-QOq">
+                                <rect key="frame" x="10" y="307" width="355" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="訂購人名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojv-m0-Aaa">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="34"/>
+                                        <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="18"/>
+                                        <color key="textColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="訂購人名稱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4lh-To-S5P">
+                                        <rect key="frame" x="160" y="0.0" width="195" height="34"/>
+                                        <color key="backgroundColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="didItOnExitName:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="jjZ-Xu-vup"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgQ-hQ-cqx">
+                                <rect key="frame" x="10" y="192" width="355" height="105"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="取貨日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaD-rs-AZW">
+                                        <rect key="frame" x="0.0" y="0.0" width="72" height="105"/>
+                                        <fontDescription key="fontDescription" name="STSongti-TC-Regular" family="Songti TC" pointSize="18"/>
+                                        <color key="textColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="c47-Vq-G9d">
+                                        <rect key="frame" x="72" y="0.0" width="283" height="105"/>
+                                        <color key="backgroundColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.84705882349999995" green="0.83724453649999997" blue="0.63772411399999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <locale key="locale" localeIdentifier="zh_TW"/>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnN-J6-cKi">
                                 <rect key="frame" x="0.0" y="150" width="375" height="517"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8ad-5H-709">
@@ -306,22 +355,33 @@
                         <color key="backgroundColor" red="0.094117647058823528" green="0.19607843137254902" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ocK-tp-Z92" firstAttribute="top" secondItem="jUF-ve-KmN" secondAttribute="bottom" id="1MO-hU-wSa"/>
+                            <constraint firstItem="vHR-cE-QOq" firstAttribute="top" secondItem="jgQ-hQ-cqx" secondAttribute="bottom" constant="10" id="7K3-IH-LnJ"/>
+                            <constraint firstItem="jgQ-hQ-cqx" firstAttribute="top" secondItem="3jb-We-fze" secondAttribute="bottom" constant="10" id="AvW-9M-eoC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jUF-ve-KmN" secondAttribute="bottom" constant="517" id="GkY-xv-Fm3"/>
+                            <constraint firstItem="3jb-We-fze" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I1y-C6-E85"/>
                             <constraint firstItem="jUF-ve-KmN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="K9O-le-Q7w"/>
+                            <constraint firstItem="vHR-cE-QOq" firstAttribute="leading" secondItem="jgQ-hQ-cqx" secondAttribute="leading" id="L5A-ds-ycO"/>
+                            <constraint firstItem="3jb-We-fze" firstAttribute="top" secondItem="jUF-ve-KmN" secondAttribute="bottom" id="MeE-We-LMh"/>
                             <constraint firstItem="fnN-J6-cKi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RWX-Kp-2aG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ocK-tp-Z92" secondAttribute="trailing" id="Tcn-tT-9Zy"/>
+                            <constraint firstItem="3jb-We-fze" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TgU-Ua-nfz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fnN-J6-cKi" secondAttribute="trailing" id="UKS-E9-2Qf"/>
                             <constraint firstItem="fnN-J6-cKi" firstAttribute="top" secondItem="jUF-ve-KmN" secondAttribute="bottom" id="UV3-0S-KI7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fnN-J6-cKi" secondAttribute="bottom" id="Ux4-AJ-s7D"/>
+                            <constraint firstItem="vHR-cE-QOq" firstAttribute="trailing" secondItem="jgQ-hQ-cqx" secondAttribute="trailing" id="cb8-Qb-gZc"/>
                             <constraint firstItem="ocK-tp-Z92" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eH7-aJ-yWd"/>
                             <constraint firstItem="jUF-ve-KmN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hsF-MH-og6"/>
+                            <constraint firstItem="jgQ-hQ-cqx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="j5E-hu-HvJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ocK-tp-Z92" secondAttribute="bottom" id="nl9-7m-Q0H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jUF-ve-KmN" secondAttribute="trailing" id="s0Z-z8-QMQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jgQ-hQ-cqx" secondAttribute="trailing" constant="10" id="tKu-U1-lkH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="想喝點什麼?" id="siW-lS-Qfi"/>
                     <connections>
-                        <outlet property="typeStackView" destination="8ad-5H-709" id="O0Y-iV-ilY"/>
+                        <outlet property="datePicker" destination="c47-Vq-G9d" id="8Pg-ZE-Vmy"/>
+                        <outlet property="menuShow" destination="3jb-We-fze" id="9zw-dd-hkc"/>
+                        <outlet property="scrollMenu" destination="fnN-J6-cKi" id="4ld-xx-imm"/>
                         <outletCollection property="typeButtons" destination="tdJ-Zg-EGd" collectionClass="NSMutableArray" id="6Lz-Yi-hRG"/>
                         <outletCollection property="typeButtons" destination="x6c-Oi-AxR" collectionClass="NSMutableArray" id="vFy-Bs-VKo"/>
                         <outletCollection property="typeButtons" destination="UVz-Xf-2pK" collectionClass="NSMutableArray" id="dcQ-Sq-J5f"/>
@@ -349,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="-9"/>
+            <point key="canvasLocation" x="744.79999999999995" y="-9.4452773613193415"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kgo-3t-ExQ">

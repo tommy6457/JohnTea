@@ -12,16 +12,21 @@ class MainVC: UIViewController {
     var drink: Drink?
     var drinkItems = [Drink?]()
     
+    @IBOutlet weak var menuShow: UIButton!
+    @IBOutlet weak var scrollMenu: UIScrollView!
     @IBOutlet var typeButtons: [UIButton]!
-    @IBOutlet weak var typeStackView: UIStackView!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //修改datePicker屬性
+        datePicker.minimumDate = Date() //最小只到今天
+        //初始飲料品項
         initDrinkItems()
     }
     
     @IBAction func clickedMenu(_ sender: UIButton) {
-        
+        view.endEditing(true)
         hiddenShowButton()
         
     }
@@ -41,18 +46,22 @@ class MainVC: UIViewController {
         
         return detailVC
     }
+    @IBAction func didItOnExitName(_ sender: Any) {
+    }
     
     func hiddenShowButton() {
+        
         for teaType in typeButtons where teaType.tag != 0 {
             
             //讓消失有動畫效果。withDuration：幾秒內完成動畫
-            UIView.animate(withDuration: 0.6) {
+            UIView.animate(withDuration: 1) {
                 teaType.isHidden = !teaType.isHidden
-                self.typeStackView.layoutIfNeeded()
-                
+                self.view.layoutIfNeeded()
             }
             
         }
+        menuShow.isHidden = !menuShow.isHidden
+        scrollMenu.isHidden = !scrollMenu.isHidden
     }
     func initDrinkItems() {
         drinkItems.append(nil)
